@@ -15,6 +15,7 @@ class WeatherWidget extends StatelessWidget {
     final MaterialColor color =
         Provider.of<WeatherProvider>(context, listen: false).getThemeColor();
     return Container(
+      height: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           gradient: LinearGradient(
