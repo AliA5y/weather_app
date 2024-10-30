@@ -35,16 +35,18 @@ class AnimatedBottomBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: icons
               .map(
-                (icon) => GestureDetector(
-                  onTap: () => onTap?.call(icon.id),
-                  child: AnimatedSize(
-                    duration: const Duration(milliseconds: 900),
-                    child: Icon(
-                      icon.icon,
-                      size: currentIcon == icon.id ? 26 : 23,
-                      color: currentIcon == icon.id
-                          ? Theme.of(context).primaryColor
-                          : Colors.black,
+                (icon) => Expanded(
+                  child: GestureDetector(
+                    onTap: () => onTap?.call(icon.id),
+                    child: AnimatedSize(
+                      duration: const Duration(milliseconds: 250),
+                      child: Icon(
+                        icon.icon,
+                        size: currentIcon == icon.id ? 36 : 32,
+                        color: currentIcon == icon.id
+                            ? Theme.of(context).primaryColor
+                            : Colors.black,
+                      ),
                     ),
                   ),
                 ),
